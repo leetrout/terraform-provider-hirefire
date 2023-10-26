@@ -58,7 +58,8 @@ jobs:
             git diff --exit-code go.mod go.sum
       - go/test:
           failfast: true
-          packages: '-v ./...'
+          covermode: atomic
+          race: true
 
   release:
     parameters:
